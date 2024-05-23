@@ -1,0 +1,1 @@
+export type { ShipCardProps } from './ship-card';
