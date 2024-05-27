@@ -1,0 +1,40 @@
+type Icon {
+  large: String!
+  medium: String!
+}
+
+type TypeIcon {
+  default: String!
+}
+
+type Type {
+  name: String!
+  title: String!
+  icons: TypeIcon!
+}
+
+type NationIcon {
+  small: String!
+  medium: String!
+  large: String!
+}
+
+type Nation {
+  name: String!
+  title: String!
+  color: String!
+  icons: NationIcon!
+}
+
+type Vehicle {
+  title: String!
+  description: String!
+  icons: Icon!
+  level: Int!
+  type: Type!
+  nation: Nation!
+}
+
+type Query {
+  vehicles(lang: String = "ru"): [Vehicle]!
+}
