@@ -1,0 +1,33 @@
+@use '../abstracts' as *;
+
+.ant-card {
+    position: relative;
+    width: 162px;
+    height: 102px;
+
+    .ant-card-body {
+        padding: 0;
+        top: 0;
+        position: absolute;
+        z-index: 2;
+
+        .typeAndLevel {
+            position: absolute;
+            display: flex;
+            align-items: center;
+
+            .level {
+                color: $levelShipColor;
+                text-shadow: 1px 1px 2px $levelShipShadowColor;
+            }
+        }
+
+        .title {
+            position: absolute;
+            bottom: 0;
+            right: 4px;
+            color: $titleShipColor;
+            text-shadow: 1px 1px 2px $titleShipShadowColor;
+        }
+    }
+}

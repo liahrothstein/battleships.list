@@ -4,6 +4,8 @@ import { numbersConverter } from "@utils/index";
 
 import type { ShipCardProps } from "../../../shared/types";
 
+import './ShipCard.scss';
+
 export function ShipCard({ nation, type, level, title, icon }: ShipCardProps) {
 
     return (
