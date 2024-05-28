@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+.filter {
+    margin: $defaultGap;
+}
+
+.filterModal {
+    position: relative;
+    z-index: 3;
+    left: $defaultGap;
+    width: 270px;
+    padding: $defaultGap;
+    border: 1px solid $filterModalBorderColor;
+    border-radius: 5px;
+
+    hr {
+        margin: $defaultGap 0;
+    }
+
+    .filterSections {
+        .type {
+            margin-bottom: $defaultGap;
+        }
+
+        .nation {
+            margin-bottom: $defaultGap;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $defaultGap;
+
+            .ant-btn {
+                width: 32px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}

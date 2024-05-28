@@ -1,8 +1,10 @@
+@use '../abstracts' as *;
+
 .filterAndCarousel {
     .shipsCarousel {
         height: 251px;
-        padding: 0 15px;
-        gap: 15px;
+        padding: 0 $defaultGap;
+        gap: $defaultGap;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;

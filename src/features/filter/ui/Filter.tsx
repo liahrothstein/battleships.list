@@ -21,6 +21,8 @@ import UK from '../../../shared/assets/icons/uk.png';
 import USA from '../../../shared/assets/icons/usa.png';
 import USSR from '../../../shared/assets/icons/ussr.png';
 
+import './Filter.scss';
+
 export function Filter() {
     const [isModalOpen, toggleModal] = useState<boolean>(false);
 
@@ -33,40 +35,46 @@ export function Filter() {
                 <div className="filterSections">
                     <div className="type">
                         <h6>Тип</h6>
-                        <Button icon={<img src={destroyer} />} />
-                        <Button icon={<img src={cruiser} />} />
-                        <Button icon={<img src={battleship} />} />
-                        <Button icon={<img src={aircarrier} />} />
-                        <Button icon={<img src={submarine} />} />
+                        <div className="buttons">
+                            <Button icon={<img src={destroyer} />} />
+                            <Button icon={<img src={cruiser} />} />
+                            <Button icon={<img src={battleship} />} />
+                            <Button icon={<img src={aircarrier} />} />
+                            <Button icon={<img src={submarine} />} />
+                        </div>
                     </div>
                     <div className="nation">
                         <h6>Нация</h6>
-                        <Button icon={<img src={commonwealth} />} />
-                        <Button icon={<img src={europe} />} />
-                        <Button icon={<img src={france} />} />
-                        <Button icon={<img src={germany} />} />
-                        <Button icon={<img src={italy} />} />
-                        <Button icon={<img src={japan} />} />
-                        <Button icon={<img src={netherlands} />} />
-                        <Button icon={<img src={panAmerica} />} />
-                        <Button icon={<img src={panAsia} />} />
-                        <Button icon={<img src={spain} />} />
-                        <Button icon={<img src={UK} />} />
-                        <Button icon={<img src={USA} />} />
-                        <Button icon={<img src={USSR} />} />
+                        <div className="buttons">
+                            <Button icon={<img src={commonwealth} />} />
+                            <Button icon={<img src={europe} />} />
+                            <Button icon={<img src={france} />} />
+                            <Button icon={<img src={germany} />} />
+                            <Button icon={<img src={italy} />} />
+                            <Button icon={<img src={japan} />} />
+                            <Button icon={<img src={netherlands} />} />
+                            <Button icon={<img src={panAmerica} />} />
+                            <Button icon={<img src={panAsia} />} />
+                            <Button icon={<img src={spain} />} />
+                            <Button icon={<img src={UK} />} />
+                            <Button icon={<img src={USA} />} />
+                            <Button icon={<img src={USSR} />} />
+                        </div>
                     </div>
                     <div className="level">
                         <h6>Уровень</h6>
-                        <Button>I</Button>
-                        <Button>II</Button>
-                        <Button>III</Button>
-                        <Button>IV</Button>
-                        <Button>V</Button>
-                        <Button>VI</Button>
-                        <Button>VII</Button>
-                        <Button>VIII</Button>
-                        <Button>IX</Button>
-                        <Button>X</Button>
+                        <div className="buttons">
+                            <Button>I</Button>
+                            <Button>II</Button>
+                            <Button>III</Button>
+                            <Button>IV</Button>
+                            <Button>V</Button>
+                            <Button>VI</Button>
+                            <Button>VII</Button>
+                            <Button>VIII</Button>
+                            <Button>IX</Button>
+                            <Button>X</Button>
+                        </div>
                     </div>
                 </div>
             </div>}
