@@ -1,8 +1,8 @@
-export interface ShipCardProps {
+export interface Vehicle {
+    title: string,
     description: string,
     nation: string,
+    level: string,
     type: string,
-    level: number,
-    title: string,
     icon: string
 }

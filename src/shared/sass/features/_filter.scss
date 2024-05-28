@@ -1,40 +1,47 @@
 @use '../abstracts' as *;
 
 .filter {
-    margin: $defaultGap;
-}
-
-.filterModal {
     position: relative;
-    z-index: 3;
-    left: $defaultGap;
-    width: 270px;
-    padding: $defaultGap;
-    border: 1px solid $filterModalBorderColor;
-    border-radius: 5px;
 
-    hr {
-        margin: $defaultGap 0;
+    .filterBtn {
+        margin: $defaultGap;
     }
 
-    .filterSections {
-        .type {
-            margin-bottom: $defaultGap;
+    .filterModal {
+        position: absolute;
+        z-index: 4;
+        left: $defaultGap;
+        width: 270px;
+        padding: $defaultGap;
+        border: 1px solid $filterModalBorderColor;
+        border-radius: 5px;
+        top: -430px;
+        background-color: $backgroundFilterModalColor;
+        box-shadow: 0px 2px 0px 0px $boxShadowFilterModalColor;
+
+        hr {
+            margin: $defaultGap 0;
         }
 
-        .nation {
-            margin-bottom: $defaultGap;
-        }
+        .filterSections {
+            .type {
+                margin-bottom: $defaultGap;
+            }
 
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: $defaultGap;
+            .nation {
+                margin-bottom: $defaultGap;
+            }
 
-            .ant-btn {
-                width: 32px;
+            .buttons {
                 display: flex;
-                justify-content: center;
+                flex-wrap: wrap;
+                gap: $defaultGap;
+
+                .ant-btn {
+                    width: 32px;
+                    display: flex;
+                    justify-content: center;
+                }
             }
         }
     }

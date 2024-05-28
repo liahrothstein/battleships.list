@@ -27,7 +27,7 @@ export function Filter() {
     const [isModalOpen, toggleModal] = useState<boolean>(false);
 
     return (
-        <>
+        <div className="filter">
             {isModalOpen && <div className="filterModal">
                 <h3>Фильтр по параметрам</h3>
                 <p>{`Отображаемая техника `}</p>
@@ -79,9 +79,9 @@ export function Filter() {
                 </div>
             </div>}
             <Button
-                className="filter"
+                className="filterBtn"
                 icon={<FilterOutlined />}
                 onClick={() => (toggleModal(!isModalOpen))} />
-        </>
+        </div>
     )
 }

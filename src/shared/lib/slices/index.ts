@@ -1,0 +1,1 @@
+export { selectedVehicleSlice, selectVehicle } from './selected-vehicle';

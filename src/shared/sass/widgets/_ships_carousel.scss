@@ -1,13 +1,11 @@
 @use '../abstracts' as *;
 
-.filterAndCarousel {
-    .shipsCarousel {
-        height: 251px;
-        padding: 0 $defaultGap;
-        gap: $defaultGap;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        overflow-x: scroll;
-    }
+.shipsCarousel {
+    height: 251px;
+    padding: 0 $defaultGap;
+    gap: $defaultGap;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-x: scroll;
 }

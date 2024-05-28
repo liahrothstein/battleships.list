@@ -1,5 +1,4 @@
 import { ShipCard } from "@entities/index";
-import { Filter } from "@features/index";
 
 import { vehicles } from '@constants/vehicles';
 
@@ -8,12 +7,12 @@ import './ShipsCarousel.scss';
 export function ShipsCarousel() {
 
     return (
-        <div className="filterAndCarousel">
-            <Filter />
+        <div>
             <div className="shipsCarousel">
                 {vehicles.map((ship) => (
                     <ShipCard
                         key={ship.title}
+                        description={ship.description}
                         nation={ship.nation.icons.large}
                         type={ship.type.icons.default}
                         level={ship.level}
