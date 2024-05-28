@@ -1,15 +1,16 @@
 import { ShipCard } from "@entities/index";
 
-import { vehicles } from '@constants/vehicles';
+import { useVehiclesQuery } from "../../../app/services/generated";
 
 import './ShipsCarousel.scss';
 
 export function ShipsCarousel() {
+    const { data } = useVehiclesQuery(null);
 
     return (
         <div>
             <div className="shipsCarousel">
-                {vehicles.map((ship) => (
+                {((data !== undefined) ? (data.vehicles) : ([])).map((ship) => (
                     <ShipCard
                         key={ship.title}
                         description={ship.description}

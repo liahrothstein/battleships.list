@@ -10,7 +10,7 @@ const config: CodegenConfig = {
                 'typescript-resolvers',
                 {
                     'typescript-rtk-query': {
-                        importBaseApiFrom: './src/app/api/baseApi.ts',
+                        importBaseApiFrom: '../api/baseApi.ts',
                         importBaseApiAlternateName: 'baseApiWithGraphql',
                         exportHooks: true
                     }

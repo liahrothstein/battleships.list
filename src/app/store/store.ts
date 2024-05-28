@@ -1,16 +1,20 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import { selectedVehicleSlice } from '../../shared/lib/slices';
+import { api } from '../services/generated';
 
 const rootReducer = combineReducers({
-    selectedVehicle: selectedVehicleSlice.reducer
+    selectedVehicle: selectedVehicleSlice.reducer,
+    [api.reducerPath]: api.reducer
 });
 
 export function setupStore() {
     return (
         configureStore({
             reducer: rootReducer,
-            middleware: (getDefaultMiddleware) => (getDefaultMiddleware())
+            middleware: (getDefaultMiddleware) => (getDefaultMiddleware()
+                .concat(api.middleware)
+            )
         })
     )
 };
