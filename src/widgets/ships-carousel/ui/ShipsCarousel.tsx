@@ -8,7 +8,7 @@ import './ShipsCarousel.scss';
 export function ShipsCarousel() {
 
     return (
-        <>
+        <div className="filterAndCarousel">
             <Filter />
             <div className="shipsCarousel">
                 {vehicles.map((ship) => (
@@ -21,6 +21,6 @@ export function ShipsCarousel() {
                         icon={ship.icons.large} />
                 ))}
             </div>
-        </>
+        </div>
     )
 }
