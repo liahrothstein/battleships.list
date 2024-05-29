@@ -5,11 +5,13 @@ import { FilterOutlined } from '@ant-design/icons';
 import { FilterButton } from "@components/FilterButton";
 
 import { filterLevel, filterNation, filterType } from "@constants/filter-buttons";
+import { FilterTags } from "../../../shared/types";
 
 import './Filter.scss';
 
 export function Filter() {
     const [isModalOpen, toggleModal] = useState<boolean>(false);
+    const [filterTags, setFilterTags] = useState<FilterTags[]>([]);
 
     return (
         <div className="filter">
@@ -21,30 +23,30 @@ export function Filter() {
                     <div className="type">
                         <h6>Тип</h6>
                         <div className="buttons">
-                            {filterType.map((icon) => (
+                            {filterType.map((filter) => (
                                 <FilterButton
-                                    key={icon}
-                                    icon={icon} />
+                                    key={filter.icon}
+                                    icon={filter.icon} />
                             ))}
                         </div>
                     </div>
                     <div className="nation">
                         <h6>Нация</h6>
                         <div className="buttons">
-                            {filterNation.map((icon) => (
+                            {filterNation.map((filter) => (
                                 <FilterButton
-                                    key={icon}
-                                    icon={icon} />
+                                    key={filter.icon}
+                                    icon={filter.icon} />
                             ))}
                         </div>
                     </div>
                     <div className="level">
                         <h6>Уровень</h6>
                         <div className="buttons">
-                            {filterLevel.map((title) => (
+                            {filterLevel.map((filter) => (
                                 <FilterButton
-                                    key={title}
-                                    title={title} />
+                                    key={filter.title}
+                                    title={filter.title} />
                             ))}
                         </div>
                     </div>

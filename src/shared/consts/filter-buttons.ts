@@ -1,3 +1,5 @@
+import { FilterTags, type FilterSection } from '../types';
+
 import destroyer from '../assets/icons/destroyer.svg';
 import cruiser from '../assets/icons/cruiser.svg';
 import battleship from '../assets/icons/battleship.svg';
@@ -17,39 +19,123 @@ import UK from '../assets/icons/uk.png';
 import USA from '../assets/icons/usa.png';
 import USSR from '../assets/icons/ussr.png';
 
-export const filterType: string[] = [
-    destroyer,
-    cruiser,
-    battleship,
-    aircarrier,
-    submarine
+export const filterType: FilterSection[] = [
+    {
+        icon: destroyer,
+        tag: FilterTags.Destroyer
+    },
+    {
+        icon: cruiser,
+        tag: FilterTags.Cruiser
+    },
+    {
+        icon: battleship,
+        tag: FilterTags.Battleship
+    },
+    {
+        icon: aircarrier,
+        tag: FilterTags.Aircarrier
+    },
+    {
+        icon: submarine,
+        tag: FilterTags.Submarine
+    }
 ];
 
-export const filterNation: string[] = [
-    commonwealth,
-    europe,
-    france,
-    germany,
-    italy,
-    japan,
-    netherlands,
-    panAmerica,
-    panAsia,
-    spain,
-    UK,
-    USA,
-    USSR
+export const filterNation: FilterSection[] = [
+    {
+        icon: commonwealth,
+        tag: FilterTags.Commonwealth
+    },
+    {
+        icon: europe,
+        tag: FilterTags.Europe
+    },
+    {
+        icon: france,
+        tag: FilterTags.France
+    },
+    {
+        icon: germany,
+        tag: FilterTags.Germany
+    },
+    {
+        icon: italy,
+        tag: FilterTags.Italy
+    },
+    {
+        icon: japan,
+        tag: FilterTags.Japan
+    },
+    {
+        icon: netherlands,
+        tag: FilterTags.Netherlands
+    },
+    {
+        icon: panAmerica,
+        tag: FilterTags.PanAmerica
+    },
+    {
+        icon: panAsia,
+        tag: FilterTags.PanAsia
+    },
+    {
+        icon: spain,
+        tag: FilterTags.Spain
+    },
+    {
+        icon: UK,
+        tag: FilterTags.UK
+    },
+    {
+        icon: USA,
+        tag: FilterTags.USA
+    },
+    {
+        icon: USSR,
+        tag: FilterTags.USSR
+    }
 ];
 
-export const filterLevel: string[] = [
-    'I',
-    'II',
-    'III',
-    'IV',
-    'V',
-    'VI',
-    'VII',
-    'VIII',
-    'IX',
-    'X'
+export const filterLevel: FilterSection[] = [
+    {
+        title: 'I',
+        tag: FilterTags.I
+    },
+    {
+        title: 'II',
+        tag: FilterTags.II
+    },
+    {
+        title: 'III',
+        tag: FilterTags.III
+    },
+    {
+        title: 'IV',
+        tag: FilterTags.IV
+    },
+    {
+        title: 'V',
+        tag: FilterTags.V
+    },
+    {
+        title: 'VI',
+        tag: FilterTags.VI
+    },
+    {
+        title: 'VII',
+        tag: FilterTags.VII
+    },
+    {
+        title: 'VIII',
+        tag: FilterTags.VIII
+    },
+    {
+        title: 'IX',
+        tag: FilterTags.IX
+    },
+    {
+        title: 'X',
+        tag: FilterTags.X
+    }
 ];
