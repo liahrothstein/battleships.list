@@ -5,13 +5,14 @@ import { FilterOutlined } from '@ant-design/icons';
 import { FilterButton } from "@components/FilterButton";
 
 import { filterLevel, filterNation, filterType } from "@constants/filter-buttons";
+import { onClickSetTags } from "../model/filter-model";
 import { FilterTags } from "../../../shared/types";
 
 import './Filter.scss';
 
 export function Filter() {
     const [isModalOpen, toggleModal] = useState<boolean>(false);
-    const [filterTags, setFilterTags] = useState<FilterTags[]>([]);
+    const [filterTags, setFilterTags] = useState<FilterTags[]>(new Array());
 
     return (
         <div className="filter">
@@ -26,7 +27,8 @@ export function Filter() {
                             {filterType.map((filter) => (
                                 <FilterButton
                                     key={filter.icon}
-                                    icon={filter.icon} />
+                                    icon={filter.icon}
+                                    onClick={() => (onClickSetTags(filterTags, setFilterTags, filter.tag))} />
                             ))}
                         </div>
                     </div>
@@ -36,7 +38,8 @@ export function Filter() {
                             {filterNation.map((filter) => (
                                 <FilterButton
                                     key={filter.icon}
-                                    icon={filter.icon} />
+                                    icon={filter.icon}
+                                    onClick={() => (onClickSetTags(filterTags, setFilterTags, filter.tag))} />
                             ))}
                         </div>
                     </div>
@@ -46,7 +49,8 @@ export function Filter() {
                             {filterLevel.map((filter) => (
                                 <FilterButton
                                     key={filter.title}
-                                    title={filter.title} />
+                                    title={filter.title}
+                                    onClick={() => (onClickSetTags(filterTags, setFilterTags, filter.tag))} />
                             ))}
                         </div>
                     </div>
