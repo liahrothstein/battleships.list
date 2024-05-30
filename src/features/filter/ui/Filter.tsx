@@ -8,9 +8,9 @@ import { filterLevel, filterNation, filterType } from "@constants/filter-buttons
 import { onClickSetTags, filterVehicles } from "../model/filter-model";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import { FilterTags } from "../../../shared/types";
+import { setFilteredVehicles } from "../../../shared/lib/slices";
 
 import './Filter.scss';
-import { setFilteredVehicles } from "../../../shared/lib/slices";
 
 export function Filter() {
     const [isModalOpen, toggleModal] = useState<boolean>(false);
@@ -36,7 +36,9 @@ export function Filter() {
                                 <FilterButton
                                     key={filter.icon}
                                     icon={filter.icon}
-                                    onClick={() => (onClickSetTags(filterTags, setFilterTags, filter.tag))} />
+                                    onClick={() => (onClickSetTags(filterTags, setFilterTags, filter.tag))}
+                                    tags={filterTags}
+                                    tag={filter.tag} />
                             ))}
                         </div>
                     </div>
@@ -47,7 +49,9 @@ export function Filter() {
                                 <FilterButton
                                     key={filter.icon}
                                     icon={filter.icon}
-                                    onClick={() => (onClickSetTags(filterTags, setFilterTags, filter.tag))} />
+                                    onClick={() => (onClickSetTags(filterTags, setFilterTags, filter.tag))}
+                                    tags={filterTags}
+                                    tag={filter.tag} />
                             ))}
                         </div>
                     </div>
@@ -58,7 +62,9 @@ export function Filter() {
                                 <FilterButton
                                     key={filter.title}
                                     title={filter.title}
-                                    onClick={() => (onClickSetTags(filterTags, setFilterTags, filter.tag))} />
+                                    onClick={() => (onClickSetTags(filterTags, setFilterTags, filter.tag))}
+                                    tags={filterTags}
+                                    tag={filter.tag} />
                             ))}
                         </div>
                     </div>

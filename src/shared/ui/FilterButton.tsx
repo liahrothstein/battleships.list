@@ -1,20 +1,27 @@
 import { Button } from "antd";
 
+import { FilterTags } from "../types";
+
 interface FilterButtonProps {
     title?: string,
     icon?: string,
-    onClick: () => void
+    onClick: () => void,
+    tags: FilterTags[],
+    tag: FilterTags
 }
 
-export function FilterButton({ title, icon, onClick }: FilterButtonProps) {
+export function FilterButton({ title, icon, onClick, tags, tag }: FilterButtonProps) {
 
     return (
         (icon !== undefined) ? (
             <Button
                 icon={<img src={icon} />}
-                onClick={onClick} />
+                onClick={onClick}
+                danger={(tags.includes(tag))} />
         ) : (
-            <Button onClick={onClick}>{title}</Button>
+            <Button
+                onClick={onClick}
+                danger={(tags.includes(tag))}>{title}</Button>
         )
     )
 }
