@@ -1,0 +1,1 @@
+export { ShipCard } from './ship-card/ui/ShipCard';

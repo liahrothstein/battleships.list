@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.mainScreen {
+    height: 100%;
+
+    &.selected {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        .informationBlock {
+            width: 410px;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            .levelTypeAndTitle {
+                position: absolute;
+                left: 55px;
+                top: 55px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .level {
+                    color: $levelShipColor;
+                    text-shadow: 1px 1px 2px $levelShipShadowColor;
+                }
+
+                .type {
+                    width: 40px;
+                }
+
+                .title {
+                    color: $titleShipColor;
+                    text-shadow: 1px 1px 2px $titleShipShadowColor;
+                }
+            }
+
+            .descriptionBlock {
+                padding-left: 55px;
+            }
+        }
+    }
+}
