@@ -19,6 +19,7 @@ export function Filter() {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
+        
         dispatch(setFilteredVehicles(filterVehicles(filterTags, vehicles)))
     }, [filterTags]);
 
