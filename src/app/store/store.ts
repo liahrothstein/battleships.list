@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import { selectedVehicleSlice } from '../../shared/lib/slices';
+import { selectedVehicleSlice, filteredVehiclesSlice, vehiclesSlice } from '../../shared/lib/slices';
 import { api } from '../services/generated';
 
 const rootReducer = combineReducers({
     selectedVehicle: selectedVehicleSlice.reducer,
+    filteredVehicles: filteredVehiclesSlice.reducer,
+    vehicles: vehiclesSlice.reducer,
     [api.reducerPath]: api.reducer
 });
 
