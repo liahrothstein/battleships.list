@@ -259,7 +259,7 @@ export const VehiclesDocument = `
 
 const injectedRtkApi = baseApiWithGraphql.injectEndpoints({
   endpoints: (build) => ({
-    Vehicles: build.query<VehiclesQuery, VehiclesQueryVariables | void>({
+    Vehicles: build.query<any, any | void>({
       query: (variables) => ({ document: VehiclesDocument, variables })
     }),
   }),

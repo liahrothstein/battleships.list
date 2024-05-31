@@ -16,7 +16,7 @@ export const selectedVehicleSlice = createSlice({
     name: 'selectedVehicle',
     initialState,
     reducers: {
-        selectVehicle: (state, action: PayloadAction<Vehicle>) => {
+        selectVehicle: (_, action: PayloadAction<Vehicle>) => {
             return (action.payload)
         }
     }

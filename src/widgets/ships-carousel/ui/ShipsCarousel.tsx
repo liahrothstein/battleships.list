@@ -23,7 +23,7 @@ export function ShipsCarousel() {
     return (
         <div>
             <div className="shipsCarousel">
-                {((filteredVehicles.length !== 0) ? (filteredVehicles) : (vehicles)).map((ship) => (
+                {((filteredVehicles.length !== 0) ? (filteredVehicles) : (vehicles)).map((ship: any) => (
                     <ShipCard
                         key={ship.title}
                         description={ship.description}

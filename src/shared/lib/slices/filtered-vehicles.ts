@@ -7,7 +7,7 @@ export const filteredVehiclesSlice = createSlice({
     name: 'filteredVehicles',
     initialState,
     reducers: {
-        setFilteredVehicles: (state, action: PayloadAction<[]>) => {
+        setFilteredVehicles: (_, action: PayloadAction<any>) => {
             return (action.payload)
         }
     }
