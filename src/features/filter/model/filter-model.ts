@@ -177,6 +177,19 @@ function isFilterLevelCheck(tags: FilterTags[]): boolean {
     }
 };
 
+function compareNations(a: VehicleFilterParams, b: VehicleFilterParams) {
+    let aNation: string = a.nation.name;
+    let bNation: string = b.nation.name;
+
+    if (aNation > bNation) {
+        return (1);
+    } else if (aNation === bNation) {
+        return (0);
+    } else {
+        return (-1);
+    };
+};
+
 export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilterParams[]) {
     let arrayOne = new Array();
     let arrayTwo = new Array();
@@ -197,6 +210,7 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
             arrayThree.push(...filterLevel(tag, arrayTwo));
         });
 
+        arrayThree.sort(compareNations);
         return (arrayThree);
     } else if (isFilterType && isFilterNation) {
         filterTags.forEach((tag) => {
@@ -206,6 +220,7 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
             arrayTwo.push(...filterNation(tag, arrayOne));
         });
 
+        arrayTwo.sort(compareNations);
         return (arrayTwo);
     } else if (isFilterNation && isFilterLevel) {
         filterTags.forEach((tag) => {
@@ -215,6 +230,7 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
             arrayTwo.push(...filterLevel(tag, arrayOne));
         });
 
+        arrayTwo.sort(compareNations);
         return (arrayTwo);
     } else if (isFilterType && isFilterLevel) {
         filterTags.forEach((tag) => {
@@ -224,24 +240,28 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
             arrayTwo.push(...filterLevel(tag, arrayOne));
         });
 
+        arrayTwo.sort(compareNations);
         return (arrayTwo);
     } else if (isFilterType) {
         filterTags.forEach((tag) => {
             arrayOne.push(...filterType(tag, vehicles));
         });
 
+        arrayOne.sort(compareNations);
         return (arrayOne);
     } else if (isFilterNation) {
         filterTags.forEach((tag) => {
             arrayOne.push(...filterNation(tag, vehicles));
         });
 
+        arrayOne.sort(compareNations);
         return (arrayOne);
     } else if (isFilterLevel) {
         filterTags.forEach((tag) => {
             arrayOne.push(...filterLevel(tag, vehicles));
         });
 
+        arrayOne.sort(compareNations);
         return (arrayOne);
     } else {
         return (vehicles)
