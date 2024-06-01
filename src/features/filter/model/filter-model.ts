@@ -1,3 +1,4 @@
+import { matchingTypeTags, matchingNationTags, matchingLevelTags } from "@constants/index";
 import { FilterTags, type VehicleFilterParams } from "../../../shared/types";
 
 export function onClickSetTags(filterTags: FilterTags[], setFilterTags: (filterTags: FilterTags[]) => void, tag: FilterTags): void {
@@ -128,15 +129,7 @@ function filterLevel(tag: FilterTags, sourceArray: VehicleFilterParams[]) {
     return (resultArray);
 };
 
-function isFilterTypeCheck(tags: FilterTags[]): boolean {
-    let matchingTypeTags = new Set<FilterTags>([
-        FilterTags.Destroyer,
-        FilterTags.Cruiser,
-        FilterTags.Battleship,
-        FilterTags.Aircarrier,
-        FilterTags.Submarine
-    ]);
-
+function isFilterTypeCheck(tags: FilterTags[], matchingTypeTags: Set<FilterTags>): boolean {
     return (
         tags.some((tag) => (
             matchingTypeTags.has(tag)
@@ -144,23 +137,7 @@ function isFilterTypeCheck(tags: FilterTags[]): boolean {
     );
 };
 
-function isFilterNationCheck(tags: FilterTags[]): boolean {
-    let matchingNationTags = new Set<FilterTags>([
-        FilterTags.Commonwealth,
-        FilterTags.Europe,
-        FilterTags.France,
-        FilterTags.Germany,
-        FilterTags.Italy,
-        FilterTags.Japan,
-        FilterTags.Netherlands,
-        FilterTags.PanAmerica,
-        FilterTags.PanAsia,
-        FilterTags.Spain,
-        FilterTags.UK,
-        FilterTags.USA,
-        FilterTags.USSR
-    ]);
-
+function isFilterNationCheck(tags: FilterTags[], matchingNationTags: Set<FilterTags>): boolean {
     return (
         tags.some((tag) => (
             matchingNationTags.has(tag)
@@ -168,20 +145,7 @@ function isFilterNationCheck(tags: FilterTags[]): boolean {
     );
 };
 
-function isFilterLevelCheck(tags: FilterTags[]): boolean {
-    let matchingLevelTags = new Set<FilterTags>([
-        FilterTags.I,
-        FilterTags.II,
-        FilterTags.III,
-        FilterTags.IV,
-        FilterTags.V,
-        FilterTags.VI,
-        FilterTags.VII,
-        FilterTags.VIII,
-        FilterTags.IX,
-        FilterTags.X
-    ]);
-
+function isFilterLevelCheck(tags: FilterTags[], matchingLevelTags: Set<FilterTags>): boolean {
     return (
         tags.some((tag) => (
             matchingLevelTags.has(tag)
@@ -207,9 +171,9 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
     let resultArrayTwo = new Array();
     let resultArrayThree = new Array();
 
-    let isFilterType: boolean = isFilterTypeCheck(filterTags);
-    let isFilterNation: boolean = isFilterNationCheck(filterTags);
-    let isFilterLevel: boolean = isFilterLevelCheck(filterTags);
+    let isFilterType: boolean = isFilterTypeCheck(filterTags, matchingTypeTags);
+    let isFilterNation: boolean = isFilterNationCheck(filterTags, matchingNationTags);
+    let isFilterLevel: boolean = isFilterLevelCheck(filterTags, matchingLevelTags);
 
     if (isFilterType && isFilterNation && isFilterLevel) {
         filterTags.forEach((tag) => {
