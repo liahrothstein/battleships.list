@@ -129,52 +129,64 @@ function filterLevel(tag: FilterTags, sourceArray: VehicleFilterParams[]) {
 };
 
 function isFilterTypeCheck(tags: FilterTags[]): boolean {
-    if ((tags.includes(FilterTags.Destroyer)) ||
-        (tags.includes(FilterTags.Cruiser)) ||
-        (tags.includes(FilterTags.Battleship)) ||
-        (tags.includes(FilterTags.Aircarrier)) ||
-        (tags.includes(FilterTags.Submarine))) {
-        return (true)
-    } else {
-        return (false)
-    }
+    let matchingTypeTags = new Set<FilterTags>([
+        FilterTags.Destroyer,
+        FilterTags.Cruiser,
+        FilterTags.Battleship,
+        FilterTags.Aircarrier,
+        FilterTags.Submarine
+    ]);
+
+    return (
+        tags.some((tag) => (
+            matchingTypeTags.has(tag)
+        ))
+    );
 };
 
 function isFilterNationCheck(tags: FilterTags[]): boolean {
-    if ((tags.includes(FilterTags.Commonwealth)) ||
-        (tags.includes(FilterTags.Europe)) ||
-        (tags.includes(FilterTags.France)) ||
-        (tags.includes(FilterTags.Germany)) ||
-        (tags.includes(FilterTags.Italy)) ||
-        (tags.includes(FilterTags.Japan)) ||
-        (tags.includes(FilterTags.Netherlands)) ||
-        (tags.includes(FilterTags.PanAmerica)) ||
-        (tags.includes(FilterTags.PanAsia)) ||
-        (tags.includes(FilterTags.Spain)) ||
-        (tags.includes(FilterTags.UK)) ||
-        (tags.includes(FilterTags.USA)) ||
-        (tags.includes(FilterTags.USSR))) {
-        return (true)
-    } else {
-        return (false)
-    }
+    let matchingNationTags = new Set<FilterTags>([
+        FilterTags.Commonwealth,
+        FilterTags.Europe,
+        FilterTags.France,
+        FilterTags.Germany,
+        FilterTags.Italy,
+        FilterTags.Japan,
+        FilterTags.Netherlands,
+        FilterTags.PanAmerica,
+        FilterTags.PanAsia,
+        FilterTags.Spain,
+        FilterTags.UK,
+        FilterTags.USA,
+        FilterTags.USSR
+    ]);
+
+    return (
+        tags.some((tag) => (
+            matchingNationTags.has(tag)
+        ))
+    );
 };
 
 function isFilterLevelCheck(tags: FilterTags[]): boolean {
-    if ((tags.includes(FilterTags.I)) ||
-        (tags.includes(FilterTags.II)) ||
-        (tags.includes(FilterTags.III)) ||
-        (tags.includes(FilterTags.IV)) ||
-        (tags.includes(FilterTags.V)) ||
-        (tags.includes(FilterTags.VI)) ||
-        (tags.includes(FilterTags.VII)) ||
-        (tags.includes(FilterTags.VIII)) ||
-        (tags.includes(FilterTags.IX)) ||
-        (tags.includes(FilterTags.X))) {
-        return (true)
-    } else {
-        return (false)
-    }
+    let matchingLevelTags = new Set<FilterTags>([
+        FilterTags.I,
+        FilterTags.II,
+        FilterTags.III,
+        FilterTags.IV,
+        FilterTags.V,
+        FilterTags.VI,
+        FilterTags.VII,
+        FilterTags.VIII,
+        FilterTags.IX,
+        FilterTags.X
+    ]);
+
+    return (
+        tags.some((tag) => (
+            matchingLevelTags.has(tag)
+        ))
+    );
 };
 
 function compareNations(a: VehicleFilterParams, b: VehicleFilterParams) {
