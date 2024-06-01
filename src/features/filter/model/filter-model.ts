@@ -166,6 +166,19 @@ function compareNations(a: VehicleFilterParams, b: VehicleFilterParams) {
     };
 };
 
+function compareLevels(a: VehicleFilterParams, b: VehicleFilterParams) {
+    let aLevel: number = a.level;
+    let bLevel: number = b.level;
+
+    if (aLevel > bLevel) {
+        return (1);
+    } else if (aLevel === bLevel) {
+        return (0);
+    } else {
+        return (-1);
+    };
+};
+
 export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilterParams[]) {
     let resultArrayOne = new Array();
     let resultArrayTwo = new Array();
@@ -186,6 +199,7 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
             resultArrayThree.push(...filterLevel(tag, resultArrayTwo));
         });
 
+        resultArrayThree.sort(compareLevels);
         resultArrayThree.sort(compareNations);
         return (resultArrayThree);
     } else if (isFilterType && isFilterNation) {
@@ -196,6 +210,7 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
             resultArrayTwo.push(...filterNation(tag, resultArrayOne));
         });
 
+        resultArrayTwo.sort(compareLevels);
         resultArrayTwo.sort(compareNations);
         return (resultArrayTwo);
     } else if (isFilterNation && isFilterLevel) {
@@ -206,6 +221,7 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
             resultArrayTwo.push(...filterLevel(tag, resultArrayOne));
         });
 
+        resultArrayTwo.sort(compareLevels);
         resultArrayTwo.sort(compareNations);
         return (resultArrayTwo);
     } else if (isFilterType && isFilterLevel) {
@@ -216,6 +232,7 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
             resultArrayTwo.push(...filterLevel(tag, resultArrayOne));
         });
 
+        resultArrayTwo.sort(compareLevels);
         resultArrayTwo.sort(compareNations);
         return (resultArrayTwo);
     } else if (isFilterType) {
@@ -223,6 +240,7 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
             resultArrayOne.push(...filterType(tag, vehicles));
         });
 
+        resultArrayOne.sort(compareLevels);
         resultArrayOne.sort(compareNations);
         return (resultArrayOne);
     } else if (isFilterNation) {
@@ -230,6 +248,7 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
             resultArrayOne.push(...filterNation(tag, vehicles));
         });
 
+        resultArrayOne.sort(compareLevels);
         resultArrayOne.sort(compareNations);
         return (resultArrayOne);
     } else if (isFilterLevel) {
@@ -237,6 +256,7 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
             resultArrayOne.push(...filterLevel(tag, vehicles));
         });
 
+        resultArrayOne.sort(compareLevels);
         resultArrayOne.sort(compareNations);
         return (resultArrayOne);
     } else {
