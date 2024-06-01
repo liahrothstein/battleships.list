@@ -18,114 +18,114 @@ export function onClickSetTags(filterTags: FilterTags[], setFilterTags: (filterT
 };
 
 function filterType(tag: FilterTags, sourceArray: VehicleFilterParams[]) {
-    let array = new Array();
+    let resultArray = new Array();
 
     switch (tag) {
         case FilterTags.Destroyer:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.type.name === 'destroyer')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.type.name === 'destroyer')));
             break;
         case FilterTags.Cruiser:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.type.name === 'cruiser')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.type.name === 'cruiser')));
             break;
         case FilterTags.Battleship:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.type.name === 'battleship')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.type.name === 'battleship')));
             break;
         case FilterTags.Aircarrier:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.type.name === 'aircarrier')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.type.name === 'aircarrier')));
             break;
         case FilterTags.Submarine:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.type.name === 'submarine')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.type.name === 'submarine')));
             break;
     };
 
-    return (array);
+    return (resultArray);
 };
 
 function filterNation(tag: FilterTags, sourceArray: VehicleFilterParams[]) {
-    let array = new Array();
+    let resultArray = new Array();
 
     switch (tag) {
         case FilterTags.Commonwealth:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'commonwealth')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'commonwealth')));
             break;
         case FilterTags.Europe:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'europe')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'europe')));
             break;
         case FilterTags.France:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'france')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'france')));
             break;
         case FilterTags.Germany:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'germany')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'germany')));
             break;
         case FilterTags.Italy:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'italy')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'italy')));
             break;
         case FilterTags.Japan:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'japan')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'japan')));
             break;
         case FilterTags.Netherlands:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'netherlands')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'netherlands')));
             break;
         case FilterTags.PanAmerica:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'pan_america')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'pan_america')));
             break;
         case FilterTags.PanAsia:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'pan_asia')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'pan_asia')));
             break;
         case FilterTags.Spain:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'spain')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'spain')));
             break;
         case FilterTags.UK:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'uk')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'uk')));
             break;
         case FilterTags.USA:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'usa')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'usa')));
             break;
         case FilterTags.USSR:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'ussr')));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.nation.name === 'ussr')));
             break;
     };
 
-    return (array);
+    return (resultArray);
 };
 
 function filterLevel(tag: FilterTags, sourceArray: VehicleFilterParams[]) {
-    let array = new Array();
+    let resultArray = new Array();
 
     switch (tag) {
         case FilterTags.I:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.level === 1)));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.level === 1)));
             break;
         case FilterTags.II:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.level === 2)));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.level === 2)));
             break;
         case FilterTags.III:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.level === 3)));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.level === 3)));
             break;
         case FilterTags.IV:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.level === 4)));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.level === 4)));
             break;
         case FilterTags.V:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.level === 5)));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.level === 5)));
             break;
         case FilterTags.VI:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.level === 6)));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.level === 6)));
             break;
         case FilterTags.VII:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.level === 7)));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.level === 7)));
             break;
         case FilterTags.VIII:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.level === 8)));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.level === 8)));
             break;
         case FilterTags.IX:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.level === 9)));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.level === 9)));
             break;
         case FilterTags.X:
-            array.push(...sourceArray.filter((vehicle) => (vehicle.level === 10)));
+            resultArray.push(...sourceArray.filter((vehicle) => (vehicle.level === 10)));
             break;
     };
 
-    return (array);
+    return (resultArray);
 };
 
 function isFilterTypeCheck(tags: FilterTags[]): boolean {
@@ -203,9 +203,9 @@ function compareNations(a: VehicleFilterParams, b: VehicleFilterParams) {
 };
 
 export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilterParams[]) {
-    let arrayOne = new Array();
-    let arrayTwo = new Array();
-    let arrayThree = new Array();
+    let resultArrayOne = new Array();
+    let resultArrayTwo = new Array();
+    let resultArrayThree = new Array();
 
     let isFilterType: boolean = isFilterTypeCheck(filterTags);
     let isFilterNation: boolean = isFilterNationCheck(filterTags);
@@ -213,68 +213,68 @@ export function filterVehicles(filterTags: FilterTags[], vehicles: VehicleFilter
 
     if (isFilterType && isFilterNation && isFilterLevel) {
         filterTags.forEach((tag) => {
-            arrayOne.push(...filterType(tag, vehicles));
+            resultArrayOne.push(...filterType(tag, vehicles));
         });
         filterTags.forEach((tag) => {
-            arrayTwo.push(...filterNation(tag, arrayOne));
+            resultArrayTwo.push(...filterNation(tag, resultArrayOne));
         });
         filterTags.forEach((tag) => {
-            arrayThree.push(...filterLevel(tag, arrayTwo));
+            resultArrayThree.push(...filterLevel(tag, resultArrayTwo));
         });
 
-        arrayThree.sort(compareNations);
-        return (arrayThree);
+        resultArrayThree.sort(compareNations);
+        return (resultArrayThree);
     } else if (isFilterType && isFilterNation) {
         filterTags.forEach((tag) => {
-            arrayOne.push(...filterType(tag, vehicles));
+            resultArrayOne.push(...filterType(tag, vehicles));
         });
         filterTags.forEach((tag) => {
-            arrayTwo.push(...filterNation(tag, arrayOne));
+            resultArrayTwo.push(...filterNation(tag, resultArrayOne));
         });
 
-        arrayTwo.sort(compareNations);
-        return (arrayTwo);
+        resultArrayTwo.sort(compareNations);
+        return (resultArrayTwo);
     } else if (isFilterNation && isFilterLevel) {
         filterTags.forEach((tag) => {
-            arrayOne.push(...filterNation(tag, vehicles));
+            resultArrayOne.push(...filterNation(tag, vehicles));
         });
         filterTags.forEach((tag) => {
-            arrayTwo.push(...filterLevel(tag, arrayOne));
+            resultArrayTwo.push(...filterLevel(tag, resultArrayOne));
         });
 
-        arrayTwo.sort(compareNations);
-        return (arrayTwo);
+        resultArrayTwo.sort(compareNations);
+        return (resultArrayTwo);
     } else if (isFilterType && isFilterLevel) {
         filterTags.forEach((tag) => {
-            arrayOne.push(...filterType(tag, vehicles));
+            resultArrayOne.push(...filterType(tag, vehicles));
         });
         filterTags.forEach((tag) => {
-            arrayTwo.push(...filterLevel(tag, arrayOne));
+            resultArrayTwo.push(...filterLevel(tag, resultArrayOne));
         });
 
-        arrayTwo.sort(compareNations);
-        return (arrayTwo);
+        resultArrayTwo.sort(compareNations);
+        return (resultArrayTwo);
     } else if (isFilterType) {
         filterTags.forEach((tag) => {
-            arrayOne.push(...filterType(tag, vehicles));
+            resultArrayOne.push(...filterType(tag, vehicles));
         });
 
-        arrayOne.sort(compareNations);
-        return (arrayOne);
+        resultArrayOne.sort(compareNations);
+        return (resultArrayOne);
     } else if (isFilterNation) {
         filterTags.forEach((tag) => {
-            arrayOne.push(...filterNation(tag, vehicles));
+            resultArrayOne.push(...filterNation(tag, vehicles));
         });
 
-        arrayOne.sort(compareNations);
-        return (arrayOne);
+        resultArrayOne.sort(compareNations);
+        return (resultArrayOne);
     } else if (isFilterLevel) {
         filterTags.forEach((tag) => {
-            arrayOne.push(...filterLevel(tag, vehicles));
+            resultArrayOne.push(...filterLevel(tag, vehicles));
         });
 
-        arrayOne.sort(compareNations);
-        return (arrayOne);
+        resultArrayOne.sort(compareNations);
+        return (resultArrayOne);
     } else {
         return (vehicles)
     };
