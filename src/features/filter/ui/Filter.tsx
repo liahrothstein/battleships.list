@@ -4,7 +4,7 @@ import { FilterOutlined } from '@ant-design/icons';
 
 import { FilterButton } from "@components/FilterButton";
 
-import { filterLevel, filterNation, filterType } from "@constants/filter-buttons";
+import { filterLevel, filterNation, filterType } from "@constants/index";
 import { onClickSetTags, filterVehicles } from "../model/filter-model";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import { FilterTags } from "../../../shared/types";
@@ -19,7 +19,6 @@ export function Filter() {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        
         dispatch(setFilteredVehicles(filterVehicles(filterTags, vehicles)))
     }, [filterTags]);
 
