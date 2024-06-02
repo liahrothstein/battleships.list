@@ -2,9 +2,9 @@ import { matchingTypeTags, matchingNationTags, matchingLevelTags } from "@consta
 import { FilterTags, type VehicleFilterParams } from "../../../shared/types";
 
 export function onClickSetTags(filterTags: FilterTags[], setFilterTags: (filterTags: FilterTags[]) => void, tag: FilterTags): void {
-    let isNewTag: boolean = (filterTags.includes(tag));
+    let isPresentTag: boolean = (filterTags.includes(tag));
 
-    if (isNewTag) {
+    if (isPresentTag) {
         let tagIndex: number = (filterTags.indexOf(tag));
         let copyArray: FilterTags[] = new Array(...filterTags);
 
