@@ -1,30 +1,62 @@
-# React + TypeScript + Vite
+# 🚢 Battleships List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Веб-приложение для просмотра списка кораблей из игры «Мир кораблей», выполненное в качестве тестового задания для **Lesta Games**. Приложение получает данные через GraphQL API и предоставляет удобный интерфейс для фильтрации и просмотра флота.
 
-Currently, two official plugins are available:
+## 🌟 Особенности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **GraphQL Интеграция**: Эффективное получение данных с помощью `graphql-request` и автоматическая генерация типов через `graphql-codegen`.
+* **Архитектура FSD**: Проект строго следует методологии **Feature-Sliced Design**, что обеспечивает легкую поддержку и масштабируемость компонентов.
+* **Продвинутая фильтрация**: Реализована сложная логика фильтрации по нации, уровню и типу корабля с поддержкой множественного выбора.
+* **Интерфейс в стиле игры**: Дизайн вдохновлен оригинальным интерфейсом игры «Мир кораблей» с использованием библиотеки **Ant Design**.
+* **State Management**: Глобальное состояние (фильтры, списки кораблей) управляется через **Redux Toolkit**.
 
-## Expanding the ESLint configuration
+## 🛠 Технологический стек
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+* **Core**: React 18, TypeScript
+* **Data Fetching**: GraphQL, RTK Query / GraphQL-request
+* **State**: Redux Toolkit
+* **UI**: Ant Design, SCSS (SASS)
+* **Build Tool**: Vite
+* **Code Generation**: GraphQL Code Generator (для типизации схем и запросов)
 
-- Configure the top-level `parserOptions` property like this:
+## 📂 Структура проекта
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Следование **FSD** позволяет четко разделить ответственность:
+* `src/app/api` — базовая конфигурация API и провайдеры.
+* `src/entities/ship-card` — сущность корабля: UI-карточка и бизнес-логика.
+* `src/features/filter` — логика и компоненты фильтрации (фильтр-модель, кнопки).
+* `src/widgets/ships-carousel` — композиционные блоки (карусель или сетка кораблей).
+* `src/shared/graphql` — `.graphql` документы и схемы.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## ⚙️ Установка и запуск
+
+1.  **Клонируйте репозиторий**:
+    ```bash
+    git clone https://github.com/liahrothstein/battleships.list.git
+    cd battleships.list
+    ```
+
+2.  **Установите зависимости**:
+    ```bash
+    npm install
+    ```
+
+3.  **Генерация GraphQL типов** (обязательно при первом запуске или изменении схем):
+    ```bash
+    npm run generate:graphql
+    ```
+
+4.  **Запустите проект в режиме разработки**:
+    ```bash
+    npm run dev
+    ```
+
+## 📡 Работа с данными
+
+Приложение использует официальный (или тестовый) GraphQL эндпоинт Lesta Games. Запросы оптимизированы для получения только необходимых полей:
+* Название и описание корабля.
+* Иконки и изображения.
+* Технические характеристики (уровень, нация, тип).
+
+---
+**Тестовое задание для Lesta Games.**
